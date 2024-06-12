@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+function to print elements of a list
+"""
 
 def safe_print_list(my_list=[], x=0):
     element = 0
