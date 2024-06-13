@@ -6,7 +6,7 @@ def safe_print_list_integers(my_list=[], x=0):
         for elements in range(x):
             print("{:d}".format(my_list[elements]), end = "")
             first += 1
+        print()
     except (ValueError, TypeError):
         pass
-    print()
     return first
