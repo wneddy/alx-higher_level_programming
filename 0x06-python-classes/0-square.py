@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""class defination"""
+"""This file entails defining a class Square."""
 
 
 class Square:
-    """declared class called Square"""
+    """Declared class called Square."""
     pass
