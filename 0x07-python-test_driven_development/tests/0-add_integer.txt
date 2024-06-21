@@ -28,3 +28,15 @@ a must be an integer
 ...     print(e)
 ...
 a must be an integer
+>>> try:
+...     add_integer(float('nan'), 2)
+... except Exception as e:
+...     print(e)
+...
+cannot convert float NaN to integer
+>>> try:
+...     add_integer(2, float('nan'))
+... except Exception as e:
+...     print(e)
+...
+cannot convert float NaN to integer

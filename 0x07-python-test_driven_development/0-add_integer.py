@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """function to add two integers"""
 
+
 def add_integer(a, b=98):
     """function to return sum of a&b
-    
+
     Args:
         a: first number.
         b: second number(dafault=98).
