@@ -2,15 +2,12 @@
 """Unittests for max_integer(list=[]) function"""
 
 import unittest
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
     """declared class to test the cases"""
 
-    def setUp(self):
-        """method to import from the file to test"""
-        max_integer = __import__('6-max_integer').max_integer
-        self.max_integer = max_integer
 
     def test_positive_integers(self):
         """method to test positive numbers"""
