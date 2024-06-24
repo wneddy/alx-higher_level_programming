@@ -1,0 +1,53 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test case 1: Basic example with punctuation marks
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+beatiorem! Iam ruinas videres""")
+Quonam modo?
+Utrum igitur tibi litteram videor an totas paginas commovere?
+Non autem hoc:
+igitur ne illud quidem.
+Fortasse id optimum, sed ubi illud:
+Plus semper voluptatis?
+Teneo, inquit, finem illi videri nihil dolere.
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+Si id dicis, vicimus.
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+Sin aliud quid voles, postea.
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+# Test case 2: Text with multiple paragraphs
+>>> text_indentation("""Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, \
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?""")
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+# Test case 3: Text with no punctuation marks
+>>> text_indentation("""This is a test text without any punctuation marks. It should print as is.""")
+This is a test text without any punctuation marks.
+It should print as is.
+
+# Test case 4: Text with only one sentence
+>>> text_indentation("""This is a sentence. Only one.""")
+This is a sentence.
+Only one.
+
+# Test case 5: Empty text (should not print anything)
+>>> text_indentation("")
+
