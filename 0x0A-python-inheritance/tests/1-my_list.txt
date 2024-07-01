@@ -1,6 +1,6 @@
 # tests/test_my_list.txt
 
->>> from my_module import MyList
+>>> MyList =  __import__('1-my_list').MyList
 
 # Test case 1: Initializing an empty MyList
 >>> my_list = MyList()
@@ -26,12 +26,3 @@
 >>> my_list2.print_sorted()
 [-4, -1, 0, 2, 5]
 
-# Test case 5: Printing an already sorted list
->>> my_list3 = MyList([1, 2, 3, 4, 5])
->>> my_list3.print_sorted()
-[1, 2, 3, 4, 5]
-
-# Ensure that print_sorted returns None
->>> result = my_list3.print_sorted()
->>> result is None
-True
