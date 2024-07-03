@@ -7,7 +7,6 @@ metry (based on 6-base_geometry.py).
 
 class BaseGeometry():
     """class BaseGeometry declared"""
-    pass
 
     def area(self):
         """method to raise exception"""
@@ -16,6 +15,6 @@ class BaseGeometry():
     def integer_validator(self, name, value):
         """method to validate value"""
         if not isinstance(value, int):
-            raise TypeError("<name> must be an integer")
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("<name> must be greater than 0")
+            raise ValueError("{} must be greater than 0".format(name))
