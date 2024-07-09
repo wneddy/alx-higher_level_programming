@@ -23,4 +23,5 @@ def main():
 
 
 if __name__ == "__main__":
+    """calling the main function"""
     main()
