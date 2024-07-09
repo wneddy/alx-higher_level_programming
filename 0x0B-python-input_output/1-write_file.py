@@ -9,5 +9,4 @@ def write_file(filename="", text=""):
     """method to perfome the operation"""
     with open(filename, mode="w", encoding="utf-8") as f:
         output = f.write(text)
-        print(output)
-        
+        return output
