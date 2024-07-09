@@ -11,7 +11,7 @@ load_from_json_file = \
     __import__('6-load_from_json_file.py').load_from_json_file
 
 
-def main():
+if __name__ == "__main__":
     """main function"""
     try:
         args = load_from_json_file("add_item.json")
@@ -20,8 +20,3 @@ def main():
     args.extend(sys.argv[1:])
     save_to_json_file(args, "add_item.json")
     print(f"Added {sys.argv[1:]} to add_item.json")
-
-
-if __name__ == "__main__":
-    """calling the main function"""
-    main()
