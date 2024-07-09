@@ -7,5 +7,5 @@ import json
 
 
 def from_json_string(my_str):
-    """method to perform operation"""|
+    """method to perform operation"""
     return json.loads(my_str)
