@@ -12,9 +12,9 @@ class Student():
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """method to retrieve dict"""
-        if (type(attrs) == list and
-                all(type(items)) == for item in attrs))
+        if (isinstance(attrs, list) and
+                all(isinstance(item, str)) for item in attrs):
             return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
         return self.__dict__
