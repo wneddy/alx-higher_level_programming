@@ -39,7 +39,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """get x"""
-        return self.__
+        return self.__x
 
     @x.setter
     def x(self, value):
