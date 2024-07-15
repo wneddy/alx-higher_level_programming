@@ -2,6 +2,7 @@
 """
 module to create class Rectangle inheriting from base class
 """
+from models.Base import Base
 
 
 class Rectangle(Base):
@@ -33,4 +34,4 @@ class Rectangle(Base):
     @property
     def y(self):
         """get y"""
-        return self.y 
+        return self.y
