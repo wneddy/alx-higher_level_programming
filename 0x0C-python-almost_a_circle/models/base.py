@@ -80,12 +80,15 @@ class Base:
         f = cls.__name__+".json"
         with open(f, "w", newline='') as fileF:
             writer = csv.writer(fileF)
-            if cls.__name__ == "Rectangle":
-                for obj in list_objs or []:
-                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
-            elif cls.__name__ == "Square":
-                for obj in list_objs or []:
-                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+            if list_objs is None:
+                writer.writerow([])
+            else:
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow([obj.id, obj.width, obj.height, 
+                                        obj.x, obj.y])
+                    elif cls.__name__ == "Square":
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
     @classmethod
     def load_from_file_csv(cls):
