@@ -3,6 +3,7 @@
 class base module declaration
 """
 import json
+import csv
 
 
 class Base:
@@ -70,5 +71,38 @@ class Base:
                     return insta
                 else:
                     return []
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in csv"""
+        f = cls.__name__+".json"
+        with open(f, "w", newline='') as fileF:
+            writer = csv.writer(fileF)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs or []:
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs or []:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Reads from CSV file and returns a list of instances."""
+        f = cls.__name__ + ".csv"
+        try:
+            with open(f, 'r', newline='') as fileF:
+                reader = csv.reader(fileF)
+                instances = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        id, width, height, x, y = map(int, row)
+                        obj = cls(width, height, x, y, id)
+                    elif cls.__name__ == "Square":
+                        id, size, x, y = map(int, row)
+                        obj = cls(size, x, y, id)
+                    instances.append(obj)
+                return instances
         except FileNotFoundError:
             return []
