@@ -34,5 +34,6 @@ class Base:
             if list_objs is None:
                 jsonF.write(cls.to_json_string([]))
             else:
-                jsonF.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs or []]))
-
+                list_dicts = [obj.to_dictionary() for obj in list_objs]
+                json_str = cls.to_json_string(list_dicts)
+                jsonF.write(json_str)
