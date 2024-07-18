@@ -15,12 +15,12 @@ class Square(Rectangle):
     def size(self):
         """method to get size"""
         return self.width
-        
+
     @size.setter
     def size(self, valueSize):
         """method to set size"""
         self.width = valueSize
-        self.height = ValueSize
+        self.height = valueSize
 
     def __str__(self):
         """returns the output of the attributes in aformated way"""
