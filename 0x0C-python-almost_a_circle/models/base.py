@@ -51,7 +51,7 @@ class Base:
         """returns instance with all attributes"""
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
-                dummy = cls(1,1)
+                dummy = cls(1, 1)
             else:
                 dummy = cls(1)
             dummy.update(**dictionary)
