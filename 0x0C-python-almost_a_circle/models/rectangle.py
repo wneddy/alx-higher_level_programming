@@ -3,7 +3,8 @@
 module to create class Rectangle inheriting from base class
 """
 from models.base import Base
-
+import os
+import json
 
 class Rectangle(Base):
     """Rectangle class created"""
@@ -78,10 +79,9 @@ class Rectangle(Base):
 
     def display(self):
         """method to print the rectangle with '#' symbol"""
-        for y in range(self.y):
-            print()
-        for h in range(self.height):
-            print(' ' * self.x + "#" * self.width)
+        print("\n" * self.y, end="")
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """method that outputs the args of the rectangle class"""
@@ -111,3 +111,13 @@ class Rectangle(Base):
             "x": self.x,
             "y": self.y
         }
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a JSON file."""
+        filename = cls.__name__ + ".json"
+        if not os.path.exists(filename):
+            return []
+        with open(filename, "r") as file:
+            list_dicts = json.load(file)
+        return [cls.create(**d) for d in list_dicts]
